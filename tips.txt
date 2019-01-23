@@ -1,0 +1,31 @@
+- Para corrigir o git no VSC quando aparece msg de "no source control found"
+1. Vai no %appdata%
+2. Apaga a pasta code
+3. No VSC vai em File/preferences/settings
+4. Em user Settings, adicione:
+  "git.enabled": true,
+  "git.path": "<path to git.exe>"
+
+- Para corrigir o /favicon.ico no request
+Insira o c�digo abaixo na criacao do servidor
+    // control for favicon
+    if (request.url == '/favicon.ico') {
+        response.writeHead(200, {'Content-Type': 'image/x-icon'} );
+        response.end();
+        return;
+    }
+
+
+- Express
+npm	install	-g	express-generator 
+
+- Consign (plugin rotas)
+npm install consign --save
+
+- Controle de sessao
+npm install express-session --save
+
+Links
+https://expressjs.com
+https://nodejs.org/dist/latest-v11.x/docs/api/
+
