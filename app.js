@@ -3,11 +3,20 @@ var path = require('path');
 var consign = require('consign');
 //var routes = require('./routes/index');
 //var users = require('./routes/users');
-var app = express();
+var app = express()
+  //, load = require('express-load')
+  , bodyParser = require('body-parser')
+  , cookieParser = require('cookie-parser')
+  , expressSession = require('express-session')
+  , app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+app.use(cookieParser('ntalk'));
+app.use(expressSession());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded());
 app.use(express.static(path.join(__dirname, 'public')));
 
 //app.use('/', routes);
