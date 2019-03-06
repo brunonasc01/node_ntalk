@@ -8,6 +8,7 @@ var app = express()
   , bodyParser = require('body-parser')
   , cookieParser = require('cookie-parser')
   , expressSession = require('express-session')
+  , methodOverride = require('method-override')
   , app = express();
 
 // view engine setup
@@ -17,6 +18,7 @@ app.use(cookieParser('ntalk'));
 app.use(expressSession());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
+app.use(methodOverride('_method'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 //app.use('/', routes);

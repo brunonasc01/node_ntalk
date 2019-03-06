@@ -25,6 +25,9 @@ npm install consign --save
 - Controle de sessao
 npm install express-session --save
 
+- Method-Override (reaproveitamento de rota)
+npm install method-override --save
+
 Links
 https://expressjs.com
 https://nodejs.org/dist/latest-v11.x/docs/api/
