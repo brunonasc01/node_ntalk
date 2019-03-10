@@ -31,4 +31,4 @@ npm install method-override --save
 Links
 https://expressjs.com
 https://nodejs.org/dist/latest-v11.x/docs/api/
-
+https://expressjs.com/pt-br/guide/using-middleware.html 

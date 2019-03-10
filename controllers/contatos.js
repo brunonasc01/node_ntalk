@@ -2,6 +2,7 @@ module.exports = function(app){
     var ContatosController = {
         index: function(req, res){
             var usuario = req.session.usuario;
+            var contatos = usuario.contatos;
             var params = {usuario: usuario, contatos: contatos};
 
             res.render('contatos/index', params);

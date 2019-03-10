@@ -9,6 +9,7 @@ var app = express()
   , cookieParser = require('cookie-parser')
   , expressSession = require('express-session')
   , methodOverride = require('method-override')
+  , error = require('./middlewares/error')
   , app = express();
 
 // view engine setup
@@ -31,6 +32,9 @@ consign({})
   .then('routes')
   .into(app)
 ;
+
+app.use(error.notFound);
+app.use(error.serverError);
 
 app.listen(3000, ()=> {
   console.log('Ntalk no ar');
