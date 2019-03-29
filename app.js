@@ -4,13 +4,18 @@ var consign = require('consign');
 //var routes = require('./routes/index');
 //var users = require('./routes/users');
 var app = express()
-  //, load = require('express-load')
-  , bodyParser = require('body-parser')
-  , cookieParser = require('cookie-parser')
-  , expressSession = require('express-session')
-  , methodOverride = require('method-override')
-  , error = require('./middlewares/error')
-  , app = express();
+//, load = require('express-load')
+var bodyParser = require('body-parser');
+var cookieParser = require('cookie-parser');
+var expressSession = require('express-session');
+var methodOverride = require('method-override');
+var error = require('./middlewares/error');
+const socketIO = require('socket.io');
+var http = require('http');
+
+var app = express();
+var server = http.Server(app);
+var io = socketIO(server);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -33,9 +38,14 @@ consign({})
   .into(app)
 ;
 
+consign({})
+  .include('sockets')
+  .into(io)
+;
+
 app.use(error.notFound);
 app.use(error.serverError);
 
-app.listen(3000, ()=> {
+server.listen(3000, ()=> {
   console.log('Ntalk no ar');
 })

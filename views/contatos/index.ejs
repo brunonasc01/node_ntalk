@@ -11,7 +11,7 @@
         <section>
           <form action="/contato" method="POST">
             <input type="text" name="contato[nome]" placeholder="Nome">
-            <input type="text" name="contato[email" placeholder="E-mail">
+            <input type="text" name="contato[email]" placeholder="E-mail">
             <button type="submit">Cadastrar</button>
           </form>
 
@@ -30,6 +30,7 @@
                         <td><%- contato.email %></td>
                         <td>
                             <a href="/contato/<%- index%>">Detalhes</a>
+                            <a href="/chat">Conversar</a>
                         </td>
                     </tr>
                   <% }) %>
