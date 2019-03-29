@@ -30,7 +30,7 @@
                         <td><%- contato.email %></td>
                         <td>
                             <a href="/contato/<%- index%>">Detalhes</a>
-                            <a href="/chat">Conversar</a>
+                            <a href="/chat" id="char_<%- contato.email%>">Conversar</a>
                         </td>
                     </tr>
                   <% }) %>
@@ -38,6 +38,8 @@
           </table>
         </section>
         
+        <% include notify_script %>
+
         <% include ../exit %>
 
         <!--partial footer-->

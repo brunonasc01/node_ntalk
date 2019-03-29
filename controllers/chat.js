@@ -1,7 +1,7 @@
 module.exports = function(app){
-    var charController = {
+    var charController = {        
         index: function(req, res){
-            var params = {usuario: req.session.usuario};
+            var params = {sala: req.query.sala};
             res.render('chat/index', params);
         }
     };
