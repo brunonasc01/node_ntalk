@@ -31,6 +31,13 @@ npm install method-override --save
 - Socket.io
 npm install socket.io --save
 
+- mongoose / mongodb
+npm	install	mongoose	bluebird	--save 
+https://mongoosejs.com/docs/connections.html
+
+A criacao do database ocorre apos a primeira gravacao de documento (conectar apenas, nao basta)
+
+Para criar uma variavel global de conexao, utilize o metodo createConnection('<url>', {useNewUrlParser: true}) ao inves de connect
 
 Links
 https://expressjs.com

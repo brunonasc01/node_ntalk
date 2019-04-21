@@ -19,6 +19,12 @@ var app = express();
 var server = http.Server(app);
 var io = socketIO(server);
 
+const mongoose = require('mongoose');
+const bluebird = require('bluebird');
+
+mongoose.Promise = bluebird;
+global.db = mongoose.createConnection('mongodb://localhost:27017/ntalk', {useNewUrlParser: true});
+
 cookie = cookieParser(SECRET);
 store = new expressSession.MemoryStore();
 
