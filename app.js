@@ -1,5 +1,5 @@
-const KEY = 'ntalk.sid';
-const SECRET = 'ntalk';
+const KEY = {NTALK_KEY};
+const SECRET = {NTALK_SECRET};
 
 var express = require('express');
 var path = require('path');
